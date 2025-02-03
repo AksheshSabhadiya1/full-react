@@ -1,0 +1,75 @@
+
+-- you can return only one tag from function in react
+
+
+<> :- fragments
+   :- return empty container
+
+
+
+Using Vite :- file extension only must be .jsx
+           :- function name start with capital letter
+           :- script tag write into index.html
+
+Using create-react  :- file extension .js or .jsx
+                    :- function name must start with capital letter
+                    :- script tag automatic write during execution
+                    
+
+
+--> <h1> this is H1 tag and my name is {username} </h1>
+
+here, {username} is called evaluted expression which means it prints only final result value also, it's not execute JS expression 
+
+
+
+
+// Hooks  :- useState, useEffect 
+
+# useState  :- define state which is updated
+            :- it return array of two value one is statevalue and second is setstatevalue
+
+ex,   let [count, setCount] = useState(15)
+here, count is statevalue & setCount is a method(function) use to update value also useState(0) is a state with inital value is 0
+
+
+
+
+// Browser DOM    :- create a new structure of DOM if any changes do
+// Virtual DOM    :- doesn't create whole structure of DOM, it change the branch which is updated
+
+
+
+
+// What is reconciliation?
+--> The algorithm react uses to diffrenciate one tree(Browser tree) with another (React virtual tree) to determine which parts need to be changed.
+--> reconciliation is called as Virtual DOM
+
+
+
+
+# Different component types are assumed to generate substantially different trees. React will not attempt to diff them, but rather replace the old tree completely.
+
+# Diffing of lists is performed using keys. Keys should be "stable, predictable, and unique."
+
+# The reconciler does the work of computing which parts of a tree have changed; the renderer then uses that information to actually update the rendered app.
+
+
+
+#The key points are:
+
+1) In a UI, it's not necessary for every update to be applied immediately; in fact, doing so can be wasteful, causing frames to drop and degrading the user experience.
+
+2) Different types of updates have different priorities — an animation update needs to complete more quickly than, say, an update from a data store.
+
+3)A push-based approach requires the app (you, the programmer) to decide how to schedule work. A pull-based approach allows the framework (React) to be smart and make those decisions for you.
+
+
+
+// What is react Fiber?
+--> the goal of react fiber is,
+
+   1) pause work and come back to it later.
+   2) assign priority to different types of work.
+   3) reuse previously completed work.
+   4) abort work if it's no longer needed.

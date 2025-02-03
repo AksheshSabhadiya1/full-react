@@ -1,0 +1,13 @@
+basicdemo/.gitignore
+basicdemo/package-lock.json
+basicdemo/package.json
+basicdemo/README.md
+basicdemo/public/favicon.ico
+basicdemo/public/index.html
+basicdemo/public/logo192.png
+basicdemo/public/logo512.png
+basicdemo/public/manifest.json
+basicdemo/public/robots.txt
+basicdemo/src/App.js
+basicdemo/src/index.js
+basicdemo/src/temp.js
