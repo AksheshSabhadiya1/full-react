@@ -11,3 +11,16 @@ basicdemo/public/robots.txt
 basicdemo/src/App.js
 basicdemo/src/index.js
 basicdemo/src/temp.js
+tailwindProps/.gitignore
+tailwindProps/eslint.config.js
+tailwindProps/index.html
+tailwindProps/package-lock.json
+tailwindProps/package.json
+tailwindProps/README.md
+tailwindProps/vite.config.ts
+tailwindProps/public/vite.svg
+tailwindProps/src/App.css
+tailwindProps/src/App.jsx
+tailwindProps/src/index.css
+tailwindProps/src/main.jsx
+tailwindProps/src/assets/react.svg

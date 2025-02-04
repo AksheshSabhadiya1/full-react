@@ -73,3 +73,9 @@ here, count is statevalue & setCount is a method(function) use to update value a
    2) assign priority to different types of work.
    3) reuse previously completed work.
    4) abort work if it's no longer needed.
+
+
+
+# props :- make component reuseable
+
+# onClick method require only function 

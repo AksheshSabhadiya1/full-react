@@ -8,20 +8,20 @@ function App() {
    let [count, setcount] = useState(5)
 
   const addValue = () =>{
-
     if(count < 20){
       setcount(count + 1)
-    }else{
-      alert("You Reached at Increase Limit")
+    // setcount( (prevCount) => prevCount + 1)    // This method is use when multiple count called, it keeps track of previous counter, it's callback arrow function
+    }
+    else{
+      alert("You Reached at Increment Limit")
     }
   }
-
+ 
   const removeValue = () =>{
-
     if(count > 0){
       setcount(count - 1)
     }else{
-      alert("You Reached at Decrease Limit")
+      alert("You Reached at Decrement Limit")
     }
 }
 
