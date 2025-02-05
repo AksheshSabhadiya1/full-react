@@ -90,3 +90,13 @@ here, count is statevalue & setCount is a method(function) use to update value a
 
 
 # useRef    :- when we require reference of anyone objects or elements
+
+
+
+# useId   :- generating unique ID that can be pass to accessibility attributes
+
+
+// In a loop, To accessing elements repeatly you can pass key for better performance. In short, Remember the key in loop
+
+
+
