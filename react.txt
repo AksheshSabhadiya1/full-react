@@ -79,3 +79,14 @@ here, count is statevalue & setCount is a method(function) use to update value a
 # props :- make component reuseable
 
 # onClick method require only function 
+
+
+# useCallback  :- return memorized function which is contain previously store value
+               :- give dependancies array which is relation with callback 
+
+
+# useEffect :- The useEffect Hook allows you to perform side effects in your components. like, fetching data, updating the DOM, and timers.
+            :- if any change in given dependancies array, useEffect hooks re-run
+
+
+# useRef    :- when we require reference of anyone objects or elements
