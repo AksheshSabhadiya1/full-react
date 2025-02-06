@@ -80,6 +80,8 @@ here, count is statevalue & setCount is a method(function) use to update value a
 
 # onClick method require only function 
 
+// In a loop, To accessing elements repeatly you can pass key for better performance. In short, Remember the key in loop
+
 
 # useCallback  :- return memorized function which is contain previously store value
                :- give dependancies array which is relation with callback 
@@ -96,7 +98,8 @@ here, count is statevalue & setCount is a method(function) use to update value a
 # useId   :- generating unique ID that can be pass to accessibility attributes
 
 
-// In a loop, To accessing elements repeatly you can pass key for better performance. In short, Remember the key in loop
-
+# cleanup in useEffect :- some component cleanup code you include it in a function and return that function from the function passed to useEffect 
+                          the cleanup code can be canceling subscriptions timers or even removing event handlers as we have just seen so that is
+                          about using the effect hook with cleanup code
 
 
