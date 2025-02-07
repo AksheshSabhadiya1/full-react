@@ -14,7 +14,7 @@ function HookTimer() {
     }
 
     function resetTimer(){
-        setTimer(timer => timer = 0)
+        setTimer(0)
     }
 
     useEffect(()=>{
