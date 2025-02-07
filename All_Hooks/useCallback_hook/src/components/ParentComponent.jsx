@@ -1,29 +1,29 @@
 
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import Title from "./Title";
 import Count from "./Count";
 import Button from "./Button";
 
 function ParentComponent(){
 
-    const [age, setAge] = useState(0)
-    const [salary, setSalary] = useState(0)
+    const [age, setAge] = useState(25)
+    const [salary, setSalary] = useState(50000)
 
-    function incrementAge(){
+    const incrementAge = useCallback(() => {
         setAge( () => age + 1)
-    }
+    },[age]) 
 
-    function incrementSalary(){
+    const incrementSalary = useCallback(() => {
         setSalary( () => salary + 1000)
-    }
+    },[salary]) 
 
     return(
         <div >
             <Title />
             <Count text='Age' Count={age} />
-            <Button onClick={incrementAge}>Increment Age</Button>
+            <Button handleClick={incrementAge}>Increment Age</Button>
             <Count text='Salary' Count={salary} />
-            <Button onClick={incrementSalary}>Increment Salary</Button>          
+            <Button handleClick={incrementSalary}>Increment Salary</Button>          
         </div>
     )
 }
