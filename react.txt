@@ -103,3 +103,5 @@ here, count is statevalue & setCount is a method(function) use to update value a
                           about using the effect hook with cleanup code
 
 
+
+# React Router Dom use 'Link' tag instead of 'anchor' tag bcz 'anchor' tag refresh page while 'Link' tag not refresh page
