@@ -1,13 +1,14 @@
 import React, { useEffect } from "react";
+import useTheme from "../context/theme";
 
 export default function Card() {
 
-    const ele = document.querySelector('html').classList
-    console.log("Element : ",ele.value);
+    const {themeMode} = useTheme()
+    console.log(themeMode);
 
     return (
         // <div className="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-        <div className={ele.value === 'light' ? "w-full bg-white border text-black border-gray-200 rounded-lg shadow" : "bg-black text-white w-full border border-gray-200 rounded-lg shadow"}>
+        <div className={themeMode === 'dark' ? "w-full bg-white border text-black border-gray-200 rounded-lg shadow" : "bg-black text-white w-full border border-gray-200 rounded-lg shadow"}>
             <a href="/">
                 <img className="p-8 rounded-t-lg" src="https://cdn.pixabay.com/photo/2021/11/14/18/36/telework-6795505_1280.jpg" alt="product_image1" />
             </a>

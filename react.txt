@@ -105,3 +105,13 @@ here, count is statevalue & setCount is a method(function) use to update value a
 
 
 # React Router Dom use 'Link' tag instead of 'anchor' tag bcz 'anchor' tag refresh page while 'Link' tag not refresh page
+
+
+
+# Context API
+
+step-1 :- create new context variable by using  React.createContext()
+
+step-2 :- context.Provider 
+
+step-3 :- useContext hooks
