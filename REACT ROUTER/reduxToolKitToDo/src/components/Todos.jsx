@@ -62,7 +62,11 @@ function Todos() {
                     <input
                         type="text"
                         value={editTexts[todo.id] ?? todo.text}
+<<<<<<< HEAD
                         className={`border outline-none w-1/2 py-2 text-center mr-2 focus:border-blue-600`}
+=======
+                        className="border outline-none w-1/2 py-2 text-center mr-2"
+>>>>>>> eb316e82e651ba35bdc4a2612e26ed1d8cd85673
                         onChange={(e) => handleInputChange(todo.id, e.target.value)}
                     />
                     <button
