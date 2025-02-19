@@ -5,7 +5,7 @@ import {Logo} from '../index'
 function Footers(){
 
     return(
-        <section className="relative overflow-hidden py-10 bg-gray-400 border border-t-2 border-t-black">
+        <section className="relative overflow-hidden py-10 bg-gray-500">
             <div className="relative z-10 mx-auto max-w-7xl px-4">
                 <div className="-m-6 flex flex-wrap">
                     <div className="w-full p-6 md:w-1/2 lg:w-5/12">
@@ -14,7 +14,7 @@ function Footers(){
                                 <Logo width="100px" />
                             </div>
                             <div>
-                                <p className="text-sm text-gray-600">
+                                <p className="text-sm text-gray-300">
                                     &copy; Copyright 2025. All Rights Reserved by DevUI.
                                 </p>
                             </div>
@@ -22,7 +22,7 @@ function Footers(){
                     </div>
                     <div className="w-full p-6 md:w-1/2 lg:w-2/12">
                         <div className="h-full">
-                            <h3 className="tracking-px mb-9  text-xs font-semibold uppercase text-gray-500">
+                            <h3 className="tracking-px mb-9  text-xs font-semibold uppercase text-gray-700">
                                 Company
                             </h3>
                             <ul>
@@ -63,7 +63,7 @@ function Footers(){
                     </div>
                     <div className="w-full p-6 md:w-1/2 lg:w-2/12">
                         <div className="h-full">
-                            <h3 className="tracking-px mb-9  text-xs font-semibold uppercase text-gray-500">
+                            <h3 className="tracking-px mb-9  text-xs font-semibold uppercase text-gray-700">
                                 Support
                             </h3>
                             <ul>
@@ -104,7 +104,7 @@ function Footers(){
                     </div>
                     <div className="w-full p-6 md:w-1/2 lg:w-3/12">
                         <div className="h-full">
-                            <h3 className="tracking-px mb-9  text-xs font-semibold uppercase text-gray-500">
+                            <h3 className="tracking-px mb-9  text-xs font-semibold uppercase text-gray-700">
                                 Legals
                             </h3>
                             <ul>

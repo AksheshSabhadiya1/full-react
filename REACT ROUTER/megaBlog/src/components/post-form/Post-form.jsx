@@ -9,7 +9,7 @@ import { useSelector } from "react-redux";
 export default function PostForm({ post }) {
 
     const navigate = useNavigate()
-    const userData = useSelector(state => state.userData)
+    const userData = useSelector(state => state.auth.userData)
     console.log("userdata", userData);
 
     const { register, control, handleSubmit, watch, setValue, getValues } = useForm({
@@ -113,7 +113,7 @@ export default function PostForm({ post }) {
                 <Input
                     label='Featured Image: '
                     type="file"
-                    className='mb-4'
+                    className='mb-4 cursor-pointer'
                     accept='image/png, image/jpg, image/jpeg, image/gif'
                     {...register('image', { required: !post })}
                 />
@@ -130,13 +130,13 @@ export default function PostForm({ post }) {
 
                 <Select
                     label="Status: "
-                    options={['active', 'inactive']}
-                    className='mb-4'
+                    options={['Active', 'Inactive']}
+                    className='mb-4 cursor-pointer'
                     {...register('status', { required: true })}
                 />
 
                 <Button
-                    className="w-full mt-4"
+                    className="w-full mt-4 cursor-pointer"
                     type="submit"
                     bgColor={post ? "bg-green-500" : undefined }
                 >{post ? 'Update' : 'Submit'}</Button>

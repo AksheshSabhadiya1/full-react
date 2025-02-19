@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 function Headers() {
 
-    const authStatus = useSelector((state) => state.status)
+    const authStatus = useSelector((state) => state.auth.status)
     console.log("authstatus :",authStatus);
     const navigate = useNavigate()
 
@@ -38,24 +38,23 @@ function Headers() {
     ]
 
     return (
-        <header className="py-3 shadow bg-gray-500">
+        <header className="py-3 bg-gray-500 shadow-2xl">
             <Container>
-                <nav className='flex flex-wrap'>
-                    <div className='mr-4'>
+                <nav className=''>
+                    <div className='mr-4 inline-block float-start'>
                         <Link to='/'>
                             <Logo width='70px' />
-
                         </Link>
                     </div>
 
-                    <ul>
+                    <ul className="flex flex-wrap ms-150">
                         {
                             navItems.map((item) => (
                                 item.active ?
                                     <li key={item.name}>
                                         <button
                                             onClick={() => navigate(item.slug)}
-                                            className='inline-bock px-6 py-2 duration-200 hover:bg-blue-100 rounded-full'
+                                            className='inline-block bg-black/10 mx-2 px-6 py-2 duration-200 hover:bg-blue-100 rounded-full'
                                         >{item.name}</button>
                                     </li>
                                     : null
@@ -63,7 +62,7 @@ function Headers() {
                         }
                         {
                             authStatus && (
-                                <li>
+                                <li className="bg-black/10 px-2 mx-2 duration-200 hover:bg-red-700 rounded-full">
                                     <LogoutBtn />
                                 </li>
                             )
