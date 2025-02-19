@@ -5,7 +5,8 @@ import { Link, useNavigate } from "react-router-dom";
 
 function Headers() {
 
-    const authStatus = useSelector((state) => state.auth.status)
+    const authStatus = useSelector((state) => state.status)
+    console.log("authstatus :",authStatus);
     const navigate = useNavigate()
 
     const navItems = [
@@ -39,7 +40,7 @@ function Headers() {
     return (
         <header className="py-3 shadow bg-gray-500">
             <Container>
-                <nav className='flex'>
+                <nav className='flex flex-wrap'>
                     <div className='mr-4'>
                         <Link to='/'>
                             <Logo width='70px' />

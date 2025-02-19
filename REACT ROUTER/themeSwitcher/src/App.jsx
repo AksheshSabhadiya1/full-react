@@ -25,7 +25,9 @@ function App() {
 
   return (
     <ThemeProvider value={{themeMode, darkTheme, lightTheme}}>
-      <div className={themeMode === 'dark' ? "bg-black flex flex-wrap min-h-screen items-center" : "bg-white flex flex-wrap min-h-screen items-center"}>
+      {/* <div className={themeMode === 'dark' ? "bg-black flex flex-wrap min-h-screen items-center justify-center" : "bg-white flex flex-wrap min-h-screen items-center justify-center"}> */}
+      
+      <div className='bg-black/40'>
       <div className="flex flex-wrap min-h-screen items-center">
         <div className="w-full">
           <div className="w-full max-w-sm mx-auto flex justify-end mb-4">

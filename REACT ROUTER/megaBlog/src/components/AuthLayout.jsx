@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 function Protected({children, authentication=true}) {
 
     const [loader, setLoder] = useState(true)
-    const authStatus = useSelector((state) => state.auth.status)
+    const authStatus = useSelector((state) => state.status)
     const navigate = useNavigate()
 
     useEffect(()=>{
@@ -14,9 +14,15 @@ function Protected({children, authentication=true}) {
         //     navigate('/')
         // }else if(authStatus === false){
         //     navigate('/login')
+        // } else{
+        //     navigate('/signup')
         // }
+        
 
-        if(authentication && authentication !== authStatus){
+        // let authValue  = authStatus === true ? true : false
+
+        
+        if(authentication && authStatus !== authentication){
             navigate('/login')
         } else if(!authentication && authStatus !== authentication){
             navigate('/')
