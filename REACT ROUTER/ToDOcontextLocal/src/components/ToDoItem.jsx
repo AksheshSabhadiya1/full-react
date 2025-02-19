@@ -43,7 +43,7 @@ function TodoItem({ todo }) {
 
             {/* Edit, Save Button */}
             <button
-                className="inline-flex w-8 h-8 rounded-lg text-sm border border-black justify-center items-center bg-gray-50 hover:bg-gray-100 shrink-0 disabled:opacity-50"
+                className="inline-flex w-8 h-8 rounded-lg cursor-pointer text-sm border border-black justify-center items-center bg-gray-50 hover:bg-gray-100 shrink-0 disabled:opacity-50 active:bg-blue-300"
                 onClick={() => {
                     if (todo.checkedStatus) return;
 
@@ -61,7 +61,7 @@ function TodoItem({ todo }) {
 
             {/* Delete Todo Button */}
             <button
-                className="inline-flex w-8 h-8 rounded-lg text-sm border border-red-900 justify-center items-center bg-gray-50 hover:bg-gray-100 shrink-0"
+                className="inline-flex w-8 h-8 cursor-pointer rounded-lg text-sm border border-red-900 justify-center items-center bg-gray-50 hover:bg-gray-100 shrink-0 hover:bg-red-300"
                 onClick={() => deleteToDo(todo.id)}
             >
                 ❌
