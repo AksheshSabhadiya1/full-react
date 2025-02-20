@@ -20,7 +20,6 @@ export default function RTE({ name, control, label, defaultvalue = '' }) {
                         init={
                             {
                                 initialValue: defaultvalue,
-                                editable_root: true,
                                 menubar: true,
                                 height: 500,
                                 plugins: [
@@ -47,7 +46,6 @@ export default function RTE({ name, control, label, defaultvalue = '' }) {
                                 ],
                                 toolbar: "undo redo | blocks | image | bold italic forecolor | alignleft aligncenter bold italic forecolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent |removeformat | help",
                                 content_style: 'body { font-family:Helvetica, Arial, sans-serif; font-size:14px}',
-                                tinycomments_mode: 'embedded',zz
                             }
                         }
                     />

@@ -24,7 +24,7 @@ export default function Editpost(){
     return post ? (
         <div className="py-8">
             <Container>
-                <PostForm />
+                <PostForm {...post} />
             </Container>
         </div>
     ) : null

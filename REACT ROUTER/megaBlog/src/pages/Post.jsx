@@ -17,16 +17,16 @@ export default function Post() {
 
     useEffect(() => {
         if (slug) {
-            appwriteService.getPost((slug)).then((item) => {
-                if (item) setPost(item)
+            appwriteService.getPost((slug)).then((post) => {
+                if (post) setPost(post)
                 else navigate('/')
             })
-        }
+        } else navigate('/')
     }, [slug, navigate])
 
     const deletePost = () => {
-        appwriteService.deletePost(post.$id).then((data) => {
-            if (data) {
+        appwriteService.deletePost(post.$id).then((status) => {
+            if (status) {
                 appwriteService.deleteFile(post.featuredimage)
                 navigate('/')
             }

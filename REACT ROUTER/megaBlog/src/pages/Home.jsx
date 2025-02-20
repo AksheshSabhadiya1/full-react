@@ -13,12 +13,12 @@ export default function Home(){
     useEffect(()=> {
         appWriteService.getAllPost([]).then((post)=> {
             if(post){
-                setPost(post)
+                setPost(post.documents)
             }
         })
     }, [])
 
-    if(post.length === 0 && !authStatus){
+    if(post.length === 0 || authStatus === false){
         return(
             <div className="w-full py-8 mt-4 text-center">
                 <Container>
@@ -39,8 +39,8 @@ export default function Home(){
                 { post.length > 0 &&
                     post.map((item)=> (
                         <div key={item.$id} className="p-2 w-1/4">
-                            <Postcard post={item}/>
-                            {/* <Postcard {...item} /> */}
+                            {/* <Postcard post={item}/> */}
+                            <Postcard {...item} />
                         </div>
                     ))
                 }

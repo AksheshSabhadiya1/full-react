@@ -17,7 +17,7 @@ export default function PostForm({ post }) {
             title: post?.title || '',
             slug: post?.slug || '',
             content: post?.content || '',
-            status: post?.status || 'active',
+            status: post?.status || 'Active',
         }
     })
 
@@ -56,7 +56,7 @@ export default function PostForm({ post }) {
 
 
     const slugTransform = useCallback((value) => {
-        if (value && typeof (value) === 'string') {
+        if (value && typeof(value) === 'string') {
             return value
                 .trim()
                 .toLowerCase()

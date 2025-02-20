@@ -11,7 +11,7 @@ export class Authservice {
             .setEndpoint(config.appwriteUrl)
             .setProject(config.appwriteProjectId);
         
-            this.account = new Account(this.client);
+        this.account = new Account(this.client);
     }
 
 
@@ -46,7 +46,7 @@ export class Authservice {
             return await this.account.get()
 
         } catch (error) {
-            throw error
+            console.log("Appwrite serive :: getCurrentUser :: error", error);
         }
     }
 
@@ -56,7 +56,7 @@ export class Authservice {
             return await this.account.deleteSessions()
 
         } catch (error) {
-            throw error
+            console.log("Appwrite serive :: logout :: error", error);
         }
     }
 }
