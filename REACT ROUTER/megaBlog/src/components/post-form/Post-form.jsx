@@ -10,13 +10,13 @@ export default function PostForm({ post }) {
 
     const navigate = useNavigate()
     const userData = useSelector(state => state.auth.userData)
-    console.log("userdata", userData);
+    // console.log("userdata", userData);
 
     const { register, control, handleSubmit, watch, setValue, getValues } = useForm({
         defaultValues: {
             title: post?.title || '',
             slug: post?.slug || '',
-            content: post?.content || '',
+            content: post?.content || 'default value',
             status: post?.status || 'Active',
         }
     })

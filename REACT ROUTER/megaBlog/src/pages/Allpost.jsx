@@ -5,7 +5,7 @@ import {Container, Postcard} from '../components/index'
 export default function Allpost() {
 
     const [post, setPost] = useState([])
-    useEffect(()=> {}, [])
+    // useEffect(()=> {}, [])
 
     appwriteService.getAllPost([]).then((post) => {
         if(post){

@@ -6,7 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 function Headers() {
 
     const authStatus = useSelector((state) => state.auth.status)
-    console.log("authstatus :",authStatus);
+    // console.log("authstatus :",authStatus);
     const navigate = useNavigate()
 
     const navItems = [

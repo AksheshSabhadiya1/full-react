@@ -8,7 +8,7 @@ export default function Home(){
     const [post, setPost] = useState([])
     const authStatus = useSelector((state)=> state.auth.status)
 
-    console.log("authStatus 2 : ", authStatus);
+    // console.log("authStatus 2 : ", authStatus);
 
     useEffect(()=> {
         appWriteService.getAllPost([]).then((post)=> {

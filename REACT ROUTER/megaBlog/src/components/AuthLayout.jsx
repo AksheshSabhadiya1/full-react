@@ -22,16 +22,16 @@ function Protected({children, authentication=true}) {
         // let authValue  = authStatus === true ? true : false
 
         
-        // if(authentication && authStatus !== authentication){
-        //     navigate('/login')
-        // } else if(!authentication && authStatus !== authentication){
-        //     navigate('/')
-        // }
+        if(authentication && authStatus !== authentication){
+            navigate('/login')
+        } else if(!authentication && authStatus !== authentication){
+            navigate('/')
+        }
 
 
-        if (authStatus !== authentication) {
-            navigate(authentication ? "/login" : "/");
-        }        
+        // if (authStatus !== authentication) {
+        //     navigate(authentication ? "/login" : "/");
+        // }        
         setLoder(false)
 
     },[authStatus, authentication, navigate])
