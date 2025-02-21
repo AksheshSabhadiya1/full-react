@@ -1,15 +1,9 @@
-import React, { useState, useMemo } from "react";
 import appwriteService from '../appwrite/conf'
 import { Link } from "react-router-dom";
 
 function Postcard({$id, title, featuredimage}){
 
-    // const imageurl = appwriteService.getFilePreview(featuredimage)
-    // console.log("imageurl : ",imageurl);
-
-    const imageurl = useMemo(() => {
-        return featuredimage ? appwriteService.getFilePreview(featuredimage) : "";
-    }, [featuredimage])
+    const imageurl = appwriteService.getFilePreview(featuredimage)
 
     return(
         <Link to={`/post/${$id}`}>
