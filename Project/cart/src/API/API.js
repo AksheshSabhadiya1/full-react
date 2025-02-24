@@ -7,7 +7,7 @@ const api = axios.create(
 )
 
 export const fetchAllData = async () => {
-    const res = await api.get('/products?_start=0&limit=3')
+    const res = await api.get('/products')
     console.log(res.data);
     return res.data
 }
