@@ -22,7 +22,7 @@ export const fetchPosts = async (pageNo) => {
 }
 
 
-export const getPost = async(id) => {
+export const getPost = async (id) => {
     try {
         const res = await api.get(`/posts/${id}`)
         return res.status === 200 ? res.data : []
@@ -38,21 +38,33 @@ export const deletePost = (id) => {
 
 
 export const updatePost = (id) => {
-    return api.patch(`/posts/${id}`, {title: 'I Have Updated'})
+    return api.patch(`/posts/${id}`, { title: 'I Have Updated' })
 }
 
 
-export const updatePost2 = (id) => { 
+export const updatePost2 = (id) => {
     const value = document.querySelector('#inputbox').value
-    return api.patch(`/posts/${id}`, {title: value})
+    return api.patch(`/posts/${id}`, { title: value })
 }
 
 
-export const fetchusers = async ({pageParam = 1}) => {
+
+
+const TOKEN = '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'
+
+
+export const fetchusers = async ({ pageParam = 1 }) => {
     try {
-        const res = await axios.get(`https://api.github.com/users?per_page=10&page=${pageParam}`)
+        const res = await axios.get(`https://api.github.com/users?per_page=10&page=${pageParam}`, {
+            headers: {
+                Authorization: `token ${TOKEN}`,
+            },
+        })
+
         return res.data
     } catch (error) {
         console.log(error);
     }
 }
+
+
