@@ -1,9 +1,12 @@
+import Container from "../components/Container/Container"
 
 
-function ViewCart() {
+export const ViewCart = () => {
     return(
-        <div>ViewCart</div>
+        <div>
+            <Container>
+                <h1>Hello</h1>
+            </Container>
+        </div>
     )
 }
-
-export default ViewCart

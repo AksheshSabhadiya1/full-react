@@ -3,7 +3,9 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query'
 import Layout from './components/Layout/Layout'
 import Home from './pages/Home'
-import ViewCart from './pages/ViewCart'
+import { ViewCart } from './pages/ViewCart'
+import Cart from './pages/Cart'
+
 
 function App() {
 
@@ -20,6 +22,11 @@ const router = createBrowserRouter([
     {
       path: '/view-cart',
       element: <ViewCart />
+    },
+
+    {
+      path: '/cart',
+      element: <Cart />
     }
   ]
 
