@@ -68,7 +68,7 @@ function Card() {
                             </div>
                             <div className='flex flex-wrap justify-center items-center'>
                                 <div className='flex justify-center relative bottom-5'>
-                                    <button className='inline-block border text-white hover:bg-blue-300 mx-3 px-6 py-2 duration-200 bg-blue-600 hover:text-black cursor-pointer rounded-full'
+                                    <button className='inline-block border border-black text-white hover:bg-blue-300 mx-3 px-6 py-2 duration-200 bg-blue-600 hover:text-black cursor-pointer rounded-full'
                                         onClick={()=> handleCart(id)}
                                     >Add to Cart</button>
                                 </div>

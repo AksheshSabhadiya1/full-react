@@ -37,7 +37,7 @@ export default function Cart() {
     }
 
     return (
-        <div className='inline-block relative top-20'>
+        <div className='inline-block relative top-20 w-full'>
             <Container>
                 {
                     cartData?.map((item) => {
@@ -46,7 +46,7 @@ export default function Cart() {
                         return (
                             <div key={id} className='border m-2 flex max-w-5xl rounded-md shadow-md'>
                                 <div className='min-w-xs min-h-60 flex flex-wrap justify-center items-center'>
-                                    <div className='max-w-50 max-h-40 relative -top-15 '>
+                                    <div className='max-w-50 max-h-40 relative -top-15'>
                                         <img src={image} className='w-6/10 ml-5 mt-10 object-center object-cover' />
                                     </div>
                                 </div>
@@ -56,7 +56,7 @@ export default function Cart() {
                                     <p className="mt-3"><strong>Category: </strong>{category}</p>
                                 </div>
                                 <div className="flex flex-wrap justify-center items-center ">
-                                <div className='inline-flex w-full relative -left-5 -top-15'>
+                                <div className='inline-flex w-full relative left-5 -top-15'>
                                     <button className='rounded bg-blue-100 w-5 mx-3 hover:bg-blue-200'
                                         onClick={() => updateQuantity(id, -1)}
                                         disabled={quantity === 1}
@@ -65,7 +65,7 @@ export default function Cart() {
                                     <button className='rounded bg-blue-100 w-5 mx-3 hover:bg-blue-200'
                                         onClick={() => updateQuantity(id, 1)}
                                     >+</button>
-                                    <button className="inline-block border text-white hover:bg-blue-300 mx-5 px-6 py-2 duration-200 bg-blue-600 hover:text-black cursor-pointer rounded-full -mt-5"
+                                    <button className="inline-block border text-white border-black hover:bg-blue-300 mx-5 px-6 py-2 duration-200 bg-blue-600 hover:text-black cursor-pointer rounded-full -mt-5"
                                         onClick={() => handleDelete(id)}>{item.quantity > 1 ? "RemoveAll" : "Remove"}</button>
                                 </div>
                                 </div>

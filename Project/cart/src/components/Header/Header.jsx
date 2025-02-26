@@ -28,19 +28,19 @@ export const Header = () => {
                     <ul className="flex flex-wrap justify-end">
                         <li>
                         <NavLink to='/'>
-                        <button className='inline-block border text-white hover:bg-blue-300 mx-2 px-6 py-2 duration-200 bg-blue-600 hover:text-black cursor-pointer rounded-full'>Home</button>
+                        <button className='inline-block border border-black text-white hover:bg-blue-300 mx-2 px-6 py-2 duration-200 bg-blue-600 hover:text-black cursor-pointer rounded-full'>Home</button>
                         </NavLink>
                         </li>
 
                         <li>
                         <NavLink to='/view-cart'>
-                        <button className='inline-block border text-white hover:bg-blue-300 mx-2 px-6 py-2 duration-200 bg-blue-600 hover:text-black cursor-pointer rounded-full' disabled={true} >View Cart</button>
+                        <button className='inline-block border border-black text-white hover:bg-blue-300 mx-2 px-6 py-2 duration-200 bg-blue-600 hover:text-black cursor-pointer rounded-full' disabled={true} >View Cart</button>
                         </NavLink>
                         </li>
 
                         <li>
                         <NavLink to='/cart'>
-                            <button className='inline-block border text-white hover:bg-blue-300 mx-2 px-6 py-2 duration-200 bg-blue-600 hover:text-black cursor-pointer rounded-full'>Cart {cartCount}</button>
+                            <button className='inline-block border border-black text-white hover:bg-blue-300 mx-2 px-6 py-2 duration-200 bg-blue-600 hover:text-black cursor-pointer rounded-full'>Cart {cartCount}</button>
                         </NavLink>
                         </li>
                     </ul>

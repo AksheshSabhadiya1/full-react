@@ -11,8 +11,8 @@ const api = axios.create(
 
 
 export const fetchAllData = async () => {
-    const res = await api.get('/products?_start=0&limit=4')
-    // const res = await api.get('/products')
+    // const res = await api.get('/products?_start=0&limit=4')
+    const res = await api.get('/products')
     return res.data
 }
 
