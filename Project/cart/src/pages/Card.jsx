@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query'
 import { fetchAllData } from '../API/API'
 import { useEffect, useState } from 'react'
-import handleCart from '../API/API'
+import addCart from '../API/API'
 
 function Card() {
 
@@ -11,7 +11,6 @@ function Card() {
     })
 
     const [state, setState] = useState([])
-
 
     useEffect(() => {
         if (data) {
@@ -34,6 +33,12 @@ function Card() {
 
 
 
+    const handleCart = (id) => {
+        addCart(id)
+    }
+
+
+
     return (
         <div className='flex flex-wrap justify-evenly relative top-20'>
             {
@@ -49,7 +54,7 @@ function Card() {
                             </div>
                             <div className='text-center relative -top-5 w-full h-25'>
                                 <p>{title}</p>
-                                <p>Price: {price}</p>
+                                <p><strong>Price: </strong>{price}</p>
                             </div>
                             <div className='flex flex-wrap justify-center items-center mb-7 -mt-5'>
                                 <button className='rounded bg-blue-100 w-1/12 mx-2 hover:bg-blue-200'

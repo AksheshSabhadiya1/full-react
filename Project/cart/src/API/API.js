@@ -1,4 +1,6 @@
 import axios from "axios";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 
 const api = axios.create(
@@ -15,30 +17,29 @@ export const fetchAllData = async () => {
 }
 
 
+export default function addCart(id) {
+   
+    const getData = JSON.parse(localStorage.getItem('products')) || [];
+    const existingCart = JSON.parse(localStorage.getItem('cartData')) || [];
 
-export const arr = []
+    const item = getData.find(item => item.id === id);
 
-export default function handleCart(id) {
-    const data = JSON.parse(localStorage.getItem('products'))
+    if (item) {
+        const CartItem = existingCart.find(cartItem => cartItem.id === id);
 
-    if(data[id-1].id === id){
-        arr.push(data[id-1])
-    }    
-}
-
-
-
-export const handleDelete = (id) =>{
-
-    const data = JSON.parse(localStorage.getItem('products'))
-
-    arr.map((index)=>{
-
-        if(index.id === id){
-            arr.pop(data[id-1])
+        if (CartItem) {
+            if(CartItem.quantity === item.quantity){
+                CartItem.quantity += item.quantity 
+            }else if(CartItem.quantity || item.quantity){
+                CartItem.quantity += item.quantity 
+            }else{
+                CartItem.quantity += Math.max(CartItem.quantity , item.quantity);
+            }
+        } else {
+            existingCart.push({ ...item, quantity: item.quantity });
         }
-    })
 
-
-
+        localStorage.setItem('cartData', JSON.stringify(existingCart));
+        window.dispatchEvent(new Event('storage'));
+    }
 }
