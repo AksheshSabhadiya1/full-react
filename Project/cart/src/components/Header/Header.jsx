@@ -6,19 +6,21 @@ import { useEffect, useState } from 'react'
 
 export const Header = () => {
 
-    const [cartCount, setCartCount] = useState(0)
-    
+    const [cartCount, setCartCount] = useState(0)    
     const updateCount = () => {
-        const data = JSON.parse(localStorage.getItem('cartData')) || []
-        setCartCount(data.length)
+        const data = JSON.parse(localStorage.getItem('cartitem')) || 0
+        setCartCount(data)
     }
-    
+     
     useEffect(()=>{
+
         updateCount()
         window.addEventListener('storage',updateCount)
 
         return () => window.removeEventListener('storage', updateCount)
-    },[])
+    },[])  
+
+    
 
 
     return (
@@ -40,7 +42,7 @@ export const Header = () => {
 
                         <li>
                         <NavLink to='/cart'>
-                            <button className='inline-block border border-black text-white hover:bg-blue-300 mx-2 px-6 py-2 duration-200 bg-blue-600 hover:text-black cursor-pointer rounded-full'>Cart {cartCount}</button>
+                            <button className='inline-block border border-black text-white hover:bg-blue-300 mx-2 px-6 py-2 duration-200 bg-blue-600 hover:text-black cursor-pointer rounded-full max-w-30 min-w-27'>Cart {cartCount === 0 ? "" : cartCount}</button>
                         </NavLink>
                         </li>
                     </ul>

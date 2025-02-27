@@ -17,7 +17,7 @@ export const cartSlice = createSlice({
             state.cart.push(cartData)
         },
 
-        updateCart: (state, action) => {
+        updateQuantity: (state, action) => {
             state.cart = state.cart.map((item) => item.id === action.payload.id ? {...item, name: action.payload.cartData} : item.id)
         },
 

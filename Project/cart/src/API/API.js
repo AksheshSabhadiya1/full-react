@@ -1,6 +1,4 @@
 import axios from "axios";
-import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 
 
 const api = axios.create(
@@ -40,6 +38,13 @@ export default function addCart(id) {
         }
 
         localStorage.setItem('cartData', JSON.stringify(existingCart));
-        window.dispatchEvent(new Event('storage'));
     }
+    
+    const totalItems = existingCart.reduce((total, item) => total + item.quantity, 0);
+    localStorage.setItem('cartitem',JSON.stringify(totalItems))
+    window.dispatchEvent(new Event('storage'));
 }
+
+
+
+

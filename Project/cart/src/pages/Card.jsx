@@ -43,26 +43,27 @@ function Card() {
         <div className='flex flex-wrap justify-evenly relative top-20'>
             {
                 state?.map((item) => {
-                    const { id, title, price, image, quantity } = item
+                    const { id, title, price, image, quantity,rating} = item
 
                     return (
                         <div key={id} className='border inline-block m-2 max-w-xs rounded-md shadow-md'>
-                            <div className='min-w-xs min-h-80 flex flex-wrap justify-center items-center'>
-                                <div className='max-w-50 max-h-60 relative -top-15 '>
+                            <div className='min-w-xs min-h-70 flex flex-wrap justify-center items-center'>
+                                <div className='max-w-38 max-h-50 relative -top-14'>
                                     <img src={image} className='w-8/10 ml-5 mt-10 object-center object-cover' />
                                 </div>
                             </div>
                             <div className='text-center relative -top-5 w-full h-25'>
-                                <p>{title}</p>
-                                <p><strong>Price: </strong>{price}</p>
+                                <p className='max-w-70 max-h-20 relative -top-8 left-5'>{title}</p>
+                                <p className='relative -top-8'><strong>Price: </strong>{price}</p>
+                                <p className="relative -top-6"><strong className="text-yellow-400">★★★★★ </strong>{rating.rate}</p>
                             </div>
                             <div className='flex flex-wrap justify-center items-center mb-7 -mt-5'>
-                                <button className='rounded bg-blue-100 w-1/12 mx-2 hover:bg-blue-200'
+                                <button className='rounded bg-blue-100 w-8 mx-2 hover:bg-blue-200'
                                     onClick={() => updateQuantity(id, -1)}
                                     disabled={quantity === 1}
                                 >-</button>
                                 {quantity}
-                                <button className='rounded bg-blue-100 w-1/12 mx-2 hover:bg-blue-200'
+                                <button className='rounded bg-blue-100 w-8 mx-2 hover:bg-blue-200'
                                     onClick={() => updateQuantity(id, 1)}
                                 >+</button>
                             </div>
