@@ -2,6 +2,9 @@ import { useQuery } from '@tanstack/react-query'
 import { fetchAllData } from '../API/API'
 import { useEffect, useState } from 'react'
 import addCart from '../API/API'
+import { Oval } from 'react-loader-spinner'
+
+
 
 function Card() {
 
@@ -11,6 +14,7 @@ function Card() {
     })
 
     const [state, setState] = useState([])
+    const [loader, setLoader] = useState(true)
 
     useEffect(() => {
         if (data) {
@@ -19,6 +23,7 @@ function Card() {
             ))
             setState(newArr)
             localStorage.setItem('products', JSON.stringify(newArr))
+            setLoader(false)
         }
     }, [data])
 
@@ -33,13 +38,8 @@ function Card() {
 
 
 
-    const handleCart = (id) => {
-        addCart(id)
-    }
 
-
-
-    return (
+    return !loader ? (
         <div className='flex flex-wrap justify-evenly relative top-20'>
             {
                 state?.map((item) => {
@@ -55,7 +55,7 @@ function Card() {
                             <div className='text-center relative -top-5 w-full h-25'>
                                 <p className='max-w-70 max-h-20 relative -top-8 left-5'>{title}</p>
                                 <p className='relative -top-8'><strong>Price: </strong>{price}</p>
-                                <p className="relative -top-6"><strong className="text-yellow-400">★★★★★ </strong>{rating.rate}</p>
+                                <p className="max-w-40 min-w-30 relative left-20 -top-6"><strong className="text-yellow-400">★★★★★ </strong>{rating.rate}</p>
                             </div>
                             <div className='flex flex-wrap justify-center items-center mb-7 -mt-5'>
                                 <button className='rounded bg-blue-100 w-8 mx-2 hover:bg-blue-200'
@@ -70,7 +70,7 @@ function Card() {
                             <div className='flex flex-wrap justify-center items-center'>
                                 <div className='flex justify-center relative bottom-5'>
                                     <button className='inline-block border border-black text-white hover:bg-blue-300 mx-3 px-6 py-2 duration-200 bg-blue-600 hover:text-black cursor-pointer rounded-full'
-                                        onClick={()=> handleCart(id)}
+                                        onClick={()=>  addCart(id)}
                                     >Add to Cart</button>
                                 </div>
                             </div>
@@ -79,7 +79,18 @@ function Card() {
                 })
             }
         </div>
-    )
+    ) : <div className="flex items-center justify-center w-full min-h-50 align-middle relative top-25">
+    <Oval
+  visible={true}
+  height="80"
+  width="80"
+  color="blue"
+  ariaLabel="oval-loading"
+  wrapperStyle={{}}
+  wrapperClass=""
+  secondaryColor='blue'
+  />
+    </div>
 }
 
 export default Card

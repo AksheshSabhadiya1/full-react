@@ -30,11 +30,11 @@ export default function addCart(id) {
                 CartItem.quantity += item.quantity 
             }else if(CartItem.quantity || item.quantity){
                 CartItem.quantity += item.quantity 
-            }else{
-                CartItem.quantity += Math.max(CartItem.quantity , item.quantity);
+                CartItem.price = item.price * CartItem.quantity
             }
+
         } else {
-            existingCart.push({ ...item, quantity: item.quantity });
+            existingCart.push({ ...item, quantity: item.quantity, price: item.price * item.quantity });
         }
 
         localStorage.setItem('cartData', JSON.stringify(existingCart));
@@ -44,7 +44,3 @@ export default function addCart(id) {
     localStorage.setItem('cartitem',JSON.stringify(totalItems))
     window.dispatchEvent(new Event('storage'));
 }
-
-
-
-

@@ -1,10 +1,7 @@
-import { useQuery } from "@tanstack/react-query"
-// import { addCart } from "../API/API"
 import { useEffect, useState } from "react"
 import Container from "../components/Container/Container"
-// import { arr } from "../API/API"
-import { useNavigate } from "react-router-dom"
-// import { StarRating } from "../API/API"
+import { useNavigate} from "react-router-dom"
+
 
 
 export default function Cart() {
@@ -43,7 +40,7 @@ export default function Cart() {
 
     const updateQuantity = (id, change) => {
         const update = cartData.map((item) => (
-            item.id === id ? { ...item, quantity: item.quantity + change } : item
+            item.id === id ? { ...item, quantity: item.quantity + change} : item
         ))
         setCartData(update)
         localStorage.setItem('cartData', JSON.stringify(update))
@@ -55,7 +52,7 @@ export default function Cart() {
     }
 
 
-    return (
+    return cartData.length > 0 ?(
         <div className='inline-block relative top-20 w-full'>
             <Container>
                 {
@@ -63,7 +60,7 @@ export default function Cart() {
                         const { id, title, category, price, image, quantity, rating } = item
 
                         return (
-                            <div key={id} className='mt-2 grid grid-cols-3 gap-3 max-w-6xl rounded-md shadow-md border'>
+                            <div key={id} className='mt-2 grid grid-cols-3 gap-3 max-w-6xl max-h-screen rounded-md shadow-md border'>
                                 <div className='min-w-xs min-h-60 flex flex-wrap justify-center items-center'>
                                     <div className='max-w-50 max-h-40 relative -top-15'>
                                         <img src={image} className='w-6/10 ml-5 mt-10 object-center object-cover' />
@@ -99,5 +96,8 @@ export default function Cart() {
                 }
             </Container >
         </div >
-    )
+    ) : <div className="flex flex-wrap flex-col items-center justify-center w-full min-h-50 align-middle relative top-25">
+        <img src="https://img.icons8.com/?size=100&id=wFlitpRAdn3I&format=png&color=000000" alt="image" />
+        <span><h1>Your cart is empty</h1></span>
+        </div>
 }

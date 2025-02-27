@@ -1,11 +1,15 @@
+import { useState } from "react"
 import Card from "./Card"
 
+
 function Home() {
+
+
     return (
         <>
-        <div>
-            <Card />
-        </div>
+            <div>
+                <Card />
+            </div>
         </>
     )
 }

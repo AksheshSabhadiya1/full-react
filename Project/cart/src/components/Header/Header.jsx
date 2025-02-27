@@ -1,6 +1,5 @@
 import { NavLink } from 'react-router-dom'
 import Container from '../Container/Container'
-// import { arr } from '../../API/API'
 import { useEffect, useState } from 'react'
 
 
