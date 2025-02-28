@@ -28,6 +28,7 @@ export default function addCart(id) {
         if (CartItem) {
             if(CartItem.quantity === item.quantity){
                 CartItem.quantity += item.quantity 
+                CartItem.price = item.price * CartItem.quantity
             }else if(CartItem.quantity || item.quantity){
                 CartItem.quantity += item.quantity 
                 CartItem.price = item.price * CartItem.quantity
@@ -44,3 +45,10 @@ export default function addCart(id) {
     localStorage.setItem('cartitem',JSON.stringify(totalItems))
     window.dispatchEvent(new Event('storage'));
 }
+
+
+
+// export const searchbarAllData = async (value) => {
+//    const res = await api.get(`/products/category/${value}`)
+//    return res.data
+// }
