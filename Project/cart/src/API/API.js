@@ -1,4 +1,5 @@
 import axios from "axios";
+// import { filterData } from "../pages/FilterData";
 
 
 const api = axios.create(
@@ -52,3 +53,14 @@ export default function addCart(id) {
 //    const res = await api.get(`/products/category/${value}`)
 //    return res.data
 // }
+
+
+export const searchbarData = async () => {
+        // const findData = document.querySelector('#searchbar').value
+        // console.log(findData);
+        filterData()
+        // const result = await searchbarAllData(findData)
+        // localStorage.setItem('filterData',JSON.stringify(result))
+
+        
+}

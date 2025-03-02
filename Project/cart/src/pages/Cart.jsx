@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react"
 import Container from "../components/Container/Container"
-import { useNavigate } from "react-router-dom"
 import OrderSummary from "./OrderSummary"
 
 
@@ -61,8 +60,6 @@ export default function Cart() {
 
         window.dispatchEvent(new Event('storage'));
     }
-
-    console.log("cartData:", cartData);
 
     return cartData ? (
         <div className='inline-flex relative top-20 w-full flex-col'>
@@ -129,13 +126,13 @@ export default function Cart() {
                         )
                     })
                 }
-                <OrderSummary props={cartData} />
+                <OrderSummary props={cartData} /> 
             </Container >
         </div >
     ) : <Container>
         <div className="flex flex-wrap flex-col items-center justify-center w-full min-h-52 relative top-20">
         <img src="https://img.icons8.com/?size=100&id=wFlitpRAdn3I&format=png&color=000000" alt="image" />
         <span><h1>Your cart is empty</h1></span>
-    </div>
+    </div> 
     </Container> 
 }

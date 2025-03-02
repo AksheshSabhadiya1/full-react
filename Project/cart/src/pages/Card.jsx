@@ -3,21 +3,26 @@ import { fetchAllData } from '../API/API'
 import { useEffect, useState } from 'react'
 import addCart from '../API/API'
 import { Oval } from 'react-loader-spinner'
+import { useProductContext } from './ProductContext'
 
+function Card({}) {
 
-
-function Card() {
-
-    const { data } = useQuery({
+    const { data, isLoading } = useQuery({
         queryKey: ['products'],
         queryFn: fetchAllData,
     })
+
+    const { filteredProducts } = useProductContext();
+    console.log("filteredProducts: ",filteredProducts);
+
+    // console.log("fff: ",filterData);
+    // localStorage.setItem('fff',JSON.stringify(filterData))
     
     const [state, setState] = useState([])
-    const [filterData, setFilterData] = useState([])
-    const [loader, setLoader] = useState(true)
-    
-    
+    // const [filterData, setFilterData] = useState([])
+
+    // const filter = JSON.parse(localStorage.getItem('filterData'))
+
     useEffect(() => {
         if (data) {
             const newArr = data?.map((item) => (
@@ -25,15 +30,10 @@ function Card() {
             ))
             setState(newArr)
             localStorage.setItem('products', JSON.stringify(newArr))
-            setLoader(false)
         }
-        // if(filterData){
-        //     const resultData = JSON.parse(localStorage.getItem('filterData')) || []
-        //     setFilterData(resultData)
-        //     setState(resultData)
-        //     setLoader(false)
-        // }
+        
     }, [data]) 
+
     
     const updateQuantity = (id, change) => {
         const update = state.map((item) => (
@@ -43,10 +43,7 @@ function Card() {
         localStorage.setItem('products', JSON.stringify(update))
     }
 
-
-
-
-    return !loader ? (
+    return (
         <div className='flex flex-wrap justify-evenly relative top-20'>
             {
                 state?.map((item) => {
@@ -86,18 +83,19 @@ function Card() {
                 })
             }
         </div>
-    ) : <div className="flex items-center justify-center w-full min-h-50 align-middle relative top-25">
-        <Oval
-            visible={true}
-            height="80"
-            width="80"
-            color="blue"
-            ariaLabel="oval-loading"
-            wrapperStyle={{}}
-            wrapperClass=""
-            secondaryColor='blue'
-        />
-    </div>
+    ) 
+    // : <div className="flex items-center justify-center w-full min-h-50 align-middle relative top-25">
+    //     <Oval
+    //         visible={true}
+    //         height="80"
+    //         width="80"
+    //         color="blue"
+    //         ariaLabel="oval-loading"
+    //         wrapperStyle={{}}
+    //         wrapperClass=""
+    //         secondaryColor='blue'
+    //     />
+    // </div>
 }
 
 export default Card
